@@ -1031,18 +1031,18 @@ textPredictAll <- function(models,
 #' @importFrom rsample analysis bootstraps
 #' @importFrom yardstick roc_auc_vec
 #' @export
-textPredictTest <- function(
-                            yhat1,
-                            yhat2,
-                            y1,
-                            y2,
-                            method = 'bootstrap_difference',
-                            statistic = 'auc',
-                            paired = TRUE,
-                            event_level = "first",
-                            bootstraps_times = 10000,
-                            seed = 42,
-                            ...) {
+test_func <- function(
+    y1,
+    y2,
+    yhat1,
+    yhat2,
+    method = 'bootstrap_difference',
+    statistic = 'auc',
+    paired = TRUE,
+    event_level = "first",
+    bootstraps_times = 10000,
+    seed = 42,
+    ...) {
   
   y2 = y1
   set.seed(seed)
@@ -1375,3 +1375,4 @@ textPredictTest <- function(
   
   return(output)
 }
+
