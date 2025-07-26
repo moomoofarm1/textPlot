@@ -1044,7 +1044,8 @@ test_func <- function(
     seed = 42,
     ...) {
   
-  y2 = y1
+  if (is.null(y2)) y2 = y1
+  if (is.null(y1)) y1 = y2
   set.seed(seed)
   
   if(method == "bootstrap"){
